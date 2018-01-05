@@ -1,19 +1,32 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import connect from '../../../../utils/connect';
+import * as actions from '../../../States/actions/Weather';
 import { Tabs } from 'antd';
+import { weatherdata } from './constant'
 
 import Toolbar from './Toolbar/Toolbar'
+import Container from './Container'
 
 import './style.css';
-const TabPane = Tabs.TabPane;
 
-class Weather extends Component {
+
+export default class Weather extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
+        //const { Weather: { data }, actions } = this.props;
         return (
             <div className="Weather">
-                <Toolbar />
+                <Toolbar
+                    actions={actions}
+                />
+                <Container
+                    data={weatherdata.weather}
+                />
             </div>
         );
     }
 }
-
-export default Weather;

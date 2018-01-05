@@ -15,13 +15,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="app_header">
-          <img src='../../static/img/cat.png' />
           <p>来查点什么吧</p>
         </header>
         <Tabs
+          style={{ marginTop: 50 }}
           defaultActiveKey="1"
           tabPosition={'left'}
-          style={{ height: 500 }}
         >
           <TabPane tab="天气" key="1">{<Weather />}</TabPane>
           <TabPane tab="快递" key="2">{<Express />}</TabPane>
@@ -29,11 +28,6 @@ class App extends Component {
           <TabPane tab="电影" key="4">{<Movies />}</TabPane>
           <TabPane tab="小徐陪聊" key="5">{<Chatroom />}</TabPane>
         </Tabs>
-
-
-
-
-
       </div>
     );
   }
